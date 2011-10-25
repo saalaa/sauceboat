@@ -1,0 +1,243 @@
+"Rank";"Country/Territory";"Capital";"Population"
+1;"Japan";"Tokyo";13185502
+2;"South Korea";"Seoul";10464051
+3;"Russia";"Moscow";10126424
+4;"Iran";"Tehran";9110347
+5;"Mexico";"Mexico City";8841916
+6;"Indonesia";"Jakarta";8489910
+7;"Peru";"Lima";7866160
+8;"China";"Beijing";7741274
+9;"Egypt";"Cairo";7438376
+10;"United Kingdom";"London";7287555
+11;"Colombia";"Bogotá";7220971
+12;"Iraq";"Baghdad";7216040
+13;"Hong Kong (People's Republic of China)";"Hong Kong";6752001
+14;"Thailand";"Bangkok";6542751
+15;"Bangladesh";"Dhaka";6080671
+16;"Saudi Arabia";"Riyadh";5318636
+17;"Chile";"Santiago, Chile";5012973
+18;"Turkey";"Ankara";4650802
+19;"Singapore";"Singapore";4408220
+20;"Democratic Republic of the Congo";"Kinshasa";4385264
+21;"Syria";"Damascus";3500000
+22;"Germany";"Berlin";3405250
+23;"Vietnam";"Hanoi";3398889
+24;"Spain";"Madrid";3232463
+25;"North Korea";"Pyongyang";3144005
+26;"Afghanistan";"Kabul";3140853
+27;"Argentina";"Buenos Aires";3021865
+28;"Ethiopia";"Addis Ababa";2737479
+29;"Kenya";"Nairobi";2665657
+30;"Republic of China (Taiwan)";"Taipei";2619920
+31;"Brazil";"Brasília";2606885
+32;"Jordan";"Amman";2600603
+33;"Ukraine";"Kiev";2591277
+34;"Italy";"Rome";2503056
+35;"Angola";"Luanda";2453779
+36;"South Africa";"Pretoria";2345908
+37;"Cuba";"Havana";2236837
+38;"Uzbekistan";"Tashkent";2207850
+39;"France";"Paris";2103674
+40;"Azerbaijan";"Baku";1879251
+41;"Romania";"Bucharest";1876857
+42;"Dominican Republic";"Santo Domingo";1875453
+43;"Venezuela";"Caracas";1838939
+44;"Morocco";"Rabat";1789635
+45;"Sudan";"Khartoum";1740661
+46;"Hungary";"Budapest";1728718
+47;"Poland";"Warsaw";1706724
+48;"Belarus";"Minsk";1702061
+49;"Philippines";"Manila";1660714
+50;"Uganda";"Kampala";1659600
+51;"Ghana";"Accra";1640507
+52;"Cameroon";"Yaoundé";1616000
+53;"Madagascar";"Antananarivo";1613375
+54;"Lebanon";"Beirut";1574387
+55;"Austria";"Vienna";1552789
+56;"Algeria";"Algiers";1518083
+57;"Ecuador";"Quito";1504991
+58;"Zimbabwe";"Harare";1487028
+59;"Yemen";"Sana'a";1431649
+60;"Guinea";"Conakry";1399981
+61;"Malaysia";"Kuala Lumpur";1381830
+62;"Uruguay";"Montevideo";1369797
+63;"Zambia";"Lusaka";1331254
+64;"Somaliland";"Hargeisa";1300000
+65;"Mali";"Bamako";1289626
+66;"Haiti";"Port-au-Prince";1235227
+67;"Czech Republic";"Prague";1227332
+68;"Libya";"Tripoli";1184045
+69;"Kuwait";"Kuwait City";1171880
+70;"Serbia";"Belgrade";1124729
+71;"Somalia";"Mogadishu";1097133
+72;"Bulgaria";"Sofia";1090295
+73;"Congo";"Brazzaville";1088044
+74;"Belgium";"Brussels";1080790
+75;"Armenia";"Yerevan";1080487
+76;"Mozambique";"Maputo";1076689
+77;"Sierra Leone";"Freetown";1070200
+78;"Georgia";"Tbilisi";1044993
+79;"Senegal";"Dakar";1030594
+80;"Burkina Faso";"Ouagadougou";1005231
+81;"Ireland";"Dublin";1045769
+82;"Liberia";"Monrovia";1010970
+83;"Guatemala";"Guatemala City";1103865
+84;"Pakistan";"Islamabad";955629
+85;"Nicaragua";"Managua";926883
+86;"Myanmar";"Naypyidaw";925000
+87;"Mongolia";"Ulan Bator";907802
+88;"Malawi";"Lilongwe";902388
+89;"Canada";"Ottawa";898150
+90;"Kyrgyzstan";"Bishkek";843240
+91;"Togo";"Lomé";824738
+92;"Panama";"Panama City";813097
+93;"Nepal";"Kathmandu";812026
+94;"Oman";"Muscat, Oman";797000
+95;"Niger";"Niamey";794814
+96;"Nigeria";"Abuja";778567
+97;"Sweden";"Stockholm";770284
+98;"Tunisia";"Tunis";767629
+99;"Turkmenistan";"Ashgabat";763537
+100;"Chad";"N'Djamena";751288
+101;"Israel";"Jerusalem";780200
+102;"Netherlands";"Amsterdam";740094
+103;"Honduras";"Tegucigalpa";735982
+104;"Central African Republic";"Bangui";731548
+105;"Greece";"Athens";721477
+106;"Mauritania";"Nouakchott";719167
+107;"Rwanda";"Kigali";718414
+108;"Latvia";"Riga";713016
+109;"Jamaica";"Kingston, Jamaica";701063
+110;"Kazakhstan";"Astana";700000
+111;"Croatia";"Zagreb";804200
+112;"Cambodia";"Phnom Penh";650651
+113;"Moldova";"Chişinău";592900
+114;"United States";"Washington, D.C.";591833
+115;"United Arab Emirates";"Abu Dhabi";585097
+116;"Tajikistan";"Dushanbe";582496
+117;"Finland";"Helsinki";568676
+118;"Lithuania";"Vilnius";556723
+119;"Gabon";"Libreville";556425
+120;"Eritrea";"Asmara";543707
+121;"Norway";"Oslo";575475
+122;"Portugal";"Lisbon";564657
+123;"El Salvador";"San Salvador";521366
+124;"Paraguay";"Asunción";520722
+125;"Macau (People's Republic of China)";"Macau";520400
+126;"Macedonia";"Skopje";506926
+127;"Denmark";"Copenhagen";506166
+129;"Djibouti";"Djibouti (city)";475332
+130;"Côte d'Ivoire";"Yamoussoukro";454929
+132;"Guinea-Bissau";"Bissau";452640
+132;"Slovakia";"Bratislava";424207
+133;"Puerto Rico (United States of America)";"San Juan, Puerto Rico";421356
+134;"Estonia";"Tallinn";403547
+135;"Burundi";"Bujumbura";384461
+136;"Bosnia and Herzegovina";"Sarajevo";383604
+137;"New Zealand";"Wellington";381900
+138;"Albania";"Tirana";376642
+139;"Australia";"Canberra";354644
+140;"Costa Rica";"San José, Costa Rica";328195
+141;"Qatar";"Doha";303429
+142;"India";"New Delhi";292300
+143;"Papua New Guinea";"Port Moresby";299396
+144;"Tanzania";"Dodoma";287200
+145;"Laos";"Vientiane";287579
+146;"Cyprus";"Nicosia (south)";270000
+147;"Lesotho";"Maseru";267652
+148;"Slovenia";"Ljubljana";264265
+149;"Suriname";"Paramaribo";254147
+150;"Namibia";"Windhoek";252721
+151;"Bahamas";"Nassau, Bahamas";248948
+152;"Botswana";"Gaborone";225656
+153;"Benin";"Porto-Novo";223552
+154;"Bolivia";"Sucre";217000
+155;"Western Sahara";"El Aaiún";194668
+156;"Transnistria";"Tiraspol";159163
+157;"Mauritius";"Port Louis";147251
+158;"Montenegro";"Podgorica";141854
+159;"New Caledonia (France)";"Nouméa";89207
+159;"Bahrain";"Manama";140616
+160;"Guyana";"Georgetown, Guyana";134599
+161;"Cape Verde";"Praia";125464
+162;"Switzerland";"Berne";121631
+163;"Sri Lanka";"Sri Jayawardenapura Kotte";118556
+164;"Iceland";"Reykjavík";115000
+165;"Maldives";"Malé";103693
+166;"Bhutan";"Thimphu";101259
+167;"Equatorial Guinea";"Malabo";100677
+168;"Barbados";"Bridgetown";96578
+170;"Northern Cyprus";"Nicosia (north)";84893
+171;"Fiji";"Suva";84410
+172;"Swaziland";"Mbabane";81594
+173;"Luxembourg";"Luxembourg";76420
+174;"Northern Mariana Islands (United States of America)";"Saipan";62392
+175;"Comoros";"Moroni, Comoros";60200
+176;"Solomon Islands";"Honiara";59288
+177;"East Timor";"Dili";59069
+178;"Saint Lucia";"Castries";57000
+179;"São Tomé and Príncipe";"Sao Tome";56166
+180;"American Samoa (United States of America)";"Pago Pago";52000
+181;"Trinidad and Tobago";"Port of Spain";50479
+182;"Nagorno-Karabakh Republic";"Stepanakert";49986
+183;"Curaçao (Netherlands)";"Willemstad, Netherlands Antilles";49885
+184;"Abkhazia";"Sukhumi";43700
+185;"Samoa";"Apia";39813
+186;"Vanuatu";"Port Vila";38000
+187;"Monaco";"Monaco";35986
+188;"Gambia";"Banjul";34828
+189;"Kiribati";"Tarawa";30000
+190;"Aruba (Netherlands)";"Oranjestad, Aruba";29998
+191;"Seychelles";"Victoria, Seychelles";29298
+192;"Gibraltar (United Kingdom)";"Gibraltar";29286
+193;"Jersey (United Kingdom)";"Saint Helier";28380
+194;"Brunei";"Bandar Seri Begawan";28135
+195;"Cayman Islands (United Kingdom)";"George Town, Cayman Islands";26798
+196;"Isle of Man (United Kingdom)";"Douglas, Isle of Man";26600
+197;"French Polynesia (France)";"Papeete";26200
+198;"West Bank (Israel/Palestinian National Authority)";"Ramallah";25500
+199;"Marshall Islands";"Majuro";25400
+200;"Andorra";"Andorra la Vella";22884
+201;"Antigua and Barbuda";"St. John's, Antigua and Barbuda";22679
+202;"Tonga";"Nukuʻalofa";22400
+203;"Faroe Islands (Denmark)";"Tórshavn";18573
+204;"Guernsey (United Kingdom)";"St. Peter Port";16701
+205;"Saint Vincent and the Grenadines";"Kingstown";16031
+206;"Greenland (Denmark)";"Nuuk";15469
+207;"South Ossetia";"Tskhinvali";15000
+208;"Dominica";"Roseau";14847
+209;"Saint Kitts and Nevis";"Basseterre";13043
+210;"Belize";"Belmopan";12300
+211;"Åland (Finland)";"Mariehamn";11161
+212;"United States Virgin Islands (United States of America)";"Charlotte Amalie, United States Virgin Islands";10817
+213;"Federated States of Micronesia";"Palikir";9900
+214;"British Virgin Islands (United Kingdom)";"Road Town";9400
+215;"Grenada";"St. George's, Grenada";7500
+216;"Malta";"Valletta";6315
+217;"Collectivity of Saint Martin (France)";"Marigot, Saint Martin";5700
+218;"Saint Pierre and Miquelon (France)";"Saint-Pierre, Saint Pierre and Miquelon";5509
+219;"Cook Islands (New Zealand)";"Avarua";5445
+220;"Liechtenstein";"Vaduz";5248
+221;"San Marino";"City of San Marino";4493
+222;"Tuvalu";"Funafuti";4492
+223;"Turks and Caicos Islands (United Kingdom)";"Cockburn Town";3700
+224;"Saint Barthélemy (France)";"Gustavia, Saint Barthélemy";3000
+225;"Falkland Islands (United Kingdom)";"Stanley, Falkland Islands";2115
+226;"Svalbard (Norway)";"Longyearbyen";2075
+227;"Christmas Island (Australia)";"Flying Fish Cove";1493
+228;"Sint Maarten (Netherlands)";"Philipsburg, Sint Maarten";1338
+229;"Wallis and Futuna (France)";"Mata-Utu";1191
+230;"Anguilla (United Kingdom)";"The Valley, Anguilla";1169
+231;"Nauru";"Yaren District";1100
+232;"Guam (United States of America)";"Hagåtña";1100
+233;"Montserrat (United Kingdom)";"Brades";1000
+234;"Bermuda (United Kingdom)";"Hamilton, Bermuda";969
+235;"Norfolk Island (Australia)";"Kingston, Norfolk Island";880
+236;"Holy See";"Vatican City";826
+237;"Saint Helena, Ascension and Tristan da Cunha (United Kingdom)";"Jamestown, Saint Helena";714
+238;"Niue (New Zealand)";"Alofi";616
+239;"Tokelau (New Zealand)";"Nukunonu";426
+240;"Palau";"Ngerulmud";391
+241;"Cocos (Keeling) Islands (Australia)";"West Island, Cocos (Keeling) Islands";120
+242;"Pitcairn Islands (United Kingdom)";"Adamstown, Pitcairn Islands";45
+243;"South Georgia and the South Sandwich Islands (United Kingdom)";"King Edward Point";18
