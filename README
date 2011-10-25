@@ -8,8 +8,8 @@ iterators, it makes for a light and memory-friendly ETL solution.
 
 Right now, the closest thing to documentation can be found in `examples/`.
 
-The name[1]_ comes from a variation around `saucebrush` [2]_ which is a similar
-project.
+The name [1]_ comes from a variation around `saucebrush` [2]_ which is a
+similar project.
 
 
 Plans
