@@ -50,6 +50,7 @@ def humanize(string):
 class Options(object):
     def __init__(self, options):
         self.options = options.copy()
+        self.operands = []
         self.values = {}
     def __getitem__(self, name):
         name = name.replace('_', '-')
@@ -71,7 +72,8 @@ class Options(object):
     def parse(self, arguments):
         for arg in arguments:
             if not arg.startswith('--'):
-                raise Exception('Error: unexpected operand found: %s' % arg)
+                self.operands.append(arg)
+                continue
 
             if '=' in arg:
                 key, value = arg.split('=')
@@ -85,12 +87,22 @@ class Options(object):
                 self.values[key] = self.options[key][1](value)
             except:
                 raise Exception('Error: unknown argument: %s' % arg)
-    def usage(self, fh, name, long_version=True):
-        print >>fh, 'Usage: %s [OPTIONS]' % name
+    def usage(self, fh, name, recipes=None, long_version=True):
+        print >>fh, 'Usage: %s [OPTIONS] [RECIPE...]' % name
         print >>fh, ''
+
+        if recipes:
+            print >>fh, 'Recipes:'
+            print >>fh, ''
+            print >>fh, '   ', ', '.join([r.name for r in recipes])
+            print >>fh, ''
+
         print >>fh, 'Arguments:'
 
-        for key in self.options.keys():
+        keys = self.options.keys()
+        keys.sort()
+
+        for key in keys:
             default, function, message = self.options[key]
 
             print >>fh, ''
@@ -100,20 +112,23 @@ class Options(object):
             else:
                 print >>fh, '    --%s=%s (Default: %s)' % (key, function.__name__.upper(), default)
 
-            if long_version:
+            if message:
                 print >>fh, '        %s' % message
 
-    def boolean(value):
+    @classmethod
+    def boolean(cls, value):
         return bool(value)
-    def string(value):
+    @classmethod
+    def string(cls, value):
         return unicode(value)
-    def integer(value):
+    @classmethod
+    def integer(cls, value):
         return int(value)
 
 options = Options( \
     { 'help': (False, Options.boolean, 'Display this help message')
     , 'version': (False, Options.boolean, 'Display the version of sauceboat')
-    #, 'info': (False, boolean, 'Display information about the receipe')
+    #, 'info': (False, Options.boolean, 'Display information about the receipe')
     })
 
 class StopProcessing(Exception):
@@ -124,34 +139,16 @@ class ProcessingError(object):
 
 class Recipe(object):
     def __init__(self, *steps, **kwargs):
-        self.name = 'default'
-        self.salt = None
-        self.options = {}
-
+        self.name = None
         self.steps = steps
 
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-    def prepare_steps(self):
-        steps = []
-
-        for step in self.steps[:-1]:
-            steps.append(step)
-
-            if self.salt:
-                steps.append(self.salt)
-
-        steps.append(self.steps[-1])
-
-        return steps
-
     def __call__(self):
         logfile = open('%s-%s.log' % (self.name, now()), 'w')
 
         def middleware(source, name):
-            print name
-
             for record in source:
                 if issubclass(ProcessingError, type(record)):
                     print >>logfile, now(), self.name, name, 'error'
@@ -166,7 +163,7 @@ class Recipe(object):
         try:
             print >>logfile, now(), self.name, 'start'
 
-            for step in self.prepare_steps():
+            for step in self.steps:
                 if hasattr(step, 'setup'):
                     step.setup(self)
 
@@ -200,42 +197,35 @@ def run_recipe(*args):
     global options
 
     recipes = {}
-    if len(args) > 1:
-        for recipe in args:
-            if not hasattr(recipe, 'name'):
-                sys.stderr.write('Error: recipe no. %s has no name\n' % recipes.index(recipe))
+    for recipe in args:
+        if not recipe.name:
+            sys.stderr.write('Error: recipe no. %s has no name\n' % recipes.index(recipe) + 1)
+            sys.exit(1)
 
-            option_name = 'run-%s' % recipe.name.lower()
+        if recipe.name in recipes:
+            sys.stderr.write('Error: name %s is being used by another recipe\n' % recipes.name)
+            sys.exit(1)
 
-            options.add({option_name: (False, boolean, 'Run recipe %s' % recipe.name)})
-            recipes[option_name] = recipe
-
-        recipe = None
-    else:
-        recipe = args[0]
+        recipes[recipe.name] = recipe
 
     try:
         options.parse(sys.argv[1:])
-    except:
-        options.usage(sys.stderr, sys.argv[0])
+    except Exception, e:
+        sys.stderr.write(u'%s\n' % str(e))
+        options.usage(sys.stderr, sys.argv[0], recipes.values(), False)
         sys.exit(1)
 
-    if options.help:
-        options.usage(sys.stdout, sys.argv[0])
-    elif options.version:
+    if options.version:
         sys.stdout.write('%s\n' % __version__)
+    elif options.help or not options.operands:
+        options.usage(sys.stdout, sys.argv[0], recipes.values())
     else:
-        if not recipe:
-            for name, recipe_ in recipes.items():
-                if options[name]:
-                    recipe = recipe_
-                    break
+        for operand in options.operands:
+            if operand not in recipes:
+                sys.stderr.write('Error: recipe %s does not exist\n' % operand)
+                sys.exit(1)
 
-        if not recipe:
-            sys.stderr.write('Error: no recipe to start\n')
-            sys.exit(1)
-    
-        for record in recipe():
-            pass
+            for record in recipes[operand]():
+                pass
 
     sys.exit(0)
