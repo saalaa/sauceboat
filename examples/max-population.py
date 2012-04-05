@@ -6,13 +6,12 @@ sys.path.append('../')
 from sauceboat import Recipe, echo, run_recipe
 from csv import DictReader
 
-import time, random
 
 def cleanup(source):
     for record in source:
-        yield { 'Population': int(record['Population'])
-              , 'Capital': record['Capital']
-              }
+        yield {'Population': int(record['Population']),
+                'Capital': record['Capital']}
+
 
 def find_min_and_max(source):
     max_record = None
@@ -31,10 +30,14 @@ def find_min_and_max(source):
     yield min_record
     yield max_record
 
+
 recipe = \
-    Recipe( DictReader(open('capitals.csv'), delimiter=';'), cleanup, find_min_and_max, echo
-          , name='max-population'
-          )
+    Recipe(DictReader(open('capitals.csv'),
+        delimiter=';'),
+        cleanup,
+        find_min_and_max, echo,
+        name='max-population')
+
 
 if __name__ == '__main__':
     run_recipe(recipe)

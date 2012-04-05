@@ -7,6 +7,7 @@ from sauceboat import Recipe, echo, run_recipe
 from csv import DictReader
 import re
 
+
 class Grep(object):
     def __init__(self, *needles):
         self.needles = []
@@ -23,10 +24,14 @@ class Grep(object):
                     yield record
                     break
 
+
 recipe = \
-    Recipe( DictReader(open('capitals.csv'), delimiter=';'), Grep(r'.*france.*', r'.*french.*'), echo
-          , name='france-related'
+    Recipe(DictReader(open('capitals.csv'), delimiter=';'),
+          Grep(r'.*france.*', r'.*french.*'),
+          echo,
+          name='france-related'
           )
+
 
 if __name__ == '__main__':
     run_recipe(recipe)
