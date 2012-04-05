@@ -1,41 +1,48 @@
 #!/usr/bin/env python
 
 # Copyright 2011 Almacom (Thailand) Ltd. All rights reserved.
-# 
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
-# 
+#
 #     1. Redistributions of source code must retain the above copyright notice,
 #        this list of conditions and the following disclaimer.
-# 
+#
 #     2. Redistributions in binary form must reproduce the above copyright
 #        notice, this list of conditions and the following disclaimer in the
 #        documentation and/or other materials provided with the distribution.
-# 
-# THIS SOFTWARE IS PROVIDED BY ALMACOM (THAIALND) LTD. ''AS IS'' AND ANY EXPRESS
-# OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
-# EVENT SHALL ALMACOM (THAIALND) LTD. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
-# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# 
-# The views and conclusions contained in the software and documentation are those
-# of the authors and should not be interpreted as representing official policies,
-# either expressed or implied, of Almacom (Thailand) Ltd.
+#
+# THIS SOFTWARE IS PROVIDED BY ALMACOM (THAIALND) LTD. ''AS IS'' AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL ALMACOM (THAIALND) LTD. OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+# The views and conclusions contained in the software and documentation are
+# those of the authors and should not be interpreted as representing official
+# policies, either expressed or implied, of Almacom (Thailand) Ltd.
 
 # XXX Add documentation and more examples
 
-import sys, time, re
+import sys
+import time
+import re
 
 __version__ = '0.1'
-__all__ = ['Options', 'options', 'StopProcessing', 'ProcessingError', 'echo', 'run_recipe']
+__all__ = ['Options', 'options', 'StopProcessing', 'ProcessingError',
+    'echo', 'run_recipe']
+
 
 def now():
     return '%.2f' % time.time()
+
+
 def humanize(string):
     string = string.replace('_', ' ')
 
@@ -47,11 +54,13 @@ def humanize(string):
 
     return string.strip()
 
+
 class Options(object):
     def __init__(self, options):
         self.options = options.copy()
         self.operands = []
         self.values = {}
+
     def __getitem__(self, name):
         name = name.replace('_', '-')
 
@@ -59,6 +68,7 @@ class Options(object):
             return self.values[name]
         else:
             return self.options[name][0]
+
     def __getattr__(self, name):
         name = name.replace('_', '-')
 
@@ -69,6 +79,7 @@ class Options(object):
 
     def add(self, options):
         self.options.update(options.copy())
+
     def parse(self, arguments):
         for arg in arguments:
             if not arg.startswith('--'):
@@ -87,6 +98,7 @@ class Options(object):
                 self.values[key] = self.options[key][1](value)
             except:
                 raise Exception('Error: unknown argument: %s' % arg)
+
     def usage(self, fh, name, recipes=None, long_version=True):
         print >>fh, 'Usage: %s [OPTIONS] [RECIPE...]' % name
         print >>fh, ''
@@ -110,7 +122,8 @@ class Options(object):
             if type(default) is bool:
                 print >>fh, '    --%s' % key
             else:
-                print >>fh, '    --%s=%s (Default: %s)' % (key, function.__name__.upper(), default)
+                print >>fh, '    --%s=%s (Default: %s)' \
+                    % (key, function.__name__.upper(), default)
 
             if message:
                 print >>fh, '        %s' % message
@@ -118,24 +131,32 @@ class Options(object):
     @classmethod
     def boolean(cls, value):
         return bool(value)
+
     @classmethod
     def string(cls, value):
         return unicode(value)
+
     @classmethod
     def integer(cls, value):
         return int(value)
 
-options = Options( \
-    { 'help': (False, Options.boolean, 'Display this help message')
-    , 'version': (False, Options.boolean, 'Display the version of sauceboat')
-    #, 'info': (False, Options.boolean, 'Display information about the receipe')
+
+options = Options({
+    'help': (False, Options.boolean, 'Display this help message'),
+    'version': (False, Options.boolean,
+                    'Display the version of sauceboat'),
+    #, 'info': (False, Options.boolean,
+    #               'Display information about the receipe')
     })
+
 
 class StopProcessing(Exception):
     pass
 
+
 class ProcessingError(object):
     pass
+
 
 class Recipe(object):
     def __init__(self, *steps, **kwargs):
@@ -188,10 +209,12 @@ class Recipe(object):
             print >>logfile, now(), self.name, 'stop'
             logfile.close()
 
+
 def echo(source):
     for record in source:
         print record
         yield record
+
 
 def run_recipe(*args):
     global options
@@ -199,11 +222,13 @@ def run_recipe(*args):
     recipes = {}
     for recipe in args:
         if not recipe.name:
-            sys.stderr.write('Error: recipe no. %s has no name\n' % recipes.index(recipe) + 1)
+            sys.stderr.write('Error: recipe no. %s has no name\n'
+                % recipes.index(recipe) + 1)
             sys.exit(1)
 
         if recipe.name in recipes:
-            sys.stderr.write('Error: name %s is being used by another recipe\n' % recipes.name)
+            sys.stderr.write('Error: name %s is being used by another recipe\n'
+                % recipes.name)
             sys.exit(1)
 
         recipes[recipe.name] = recipe
