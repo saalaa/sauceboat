@@ -19,8 +19,6 @@ def find_min_and_max(source):
     min_record = None
 
     for record in source:
-        time.sleep(random.random() * 0.01)
-
         if not max_record and not min_record:
             max_record = record
             min_record = record

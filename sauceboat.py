@@ -35,7 +35,7 @@ __version__ = '0.1'
 __all__ = ['Options', 'options', 'StopProcessing', 'ProcessingError', 'echo', 'run_recipe']
 
 def now():
-    return time.time()
+    return '%.2f' % time.time()
 def humanize(string):
     string = string.replace('_', ' ')
 
@@ -185,7 +185,7 @@ class Recipe(object):
             print >>sys.stderr, e
             print e
         finally:
-            print >>logfile, self.name, now(), 'stop'
+            print >>logfile, now(), self.name, 'stop'
             logfile.close()
 
 def echo(source):
