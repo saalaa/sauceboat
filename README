@@ -1,19 +1,17 @@
-Welcome Abord the Sauce Boat
-============================
+# Welcome Abord the Sauce Boat
 
-`sauceboat` is an ETL library that doesn't get in a programmer's way and is
+ETL library that doesn't get in the programmer's way and is
 built around conventions rather than an API. Simply put, `sauceboat` pipes
 containers into functions that themselves return containers. Combined with
 iterators, it makes for a light and memory-friendly ETL solution.
 
 Right now, the closest thing to documentation can be found in `examples/`.
 
-The name [1]_ comes from a variation around `saucebrush` [2]_ which is a
-similar project.
+The name comes from a variation around `saucebrush` which is a
+[similar project](https://bitbucket.org/sunlightlabs/saucebrush).
 
 
-Plans
------
+## Plans
 
 * Output information about the job (through `--info`)
 * Support chaining Recipes (fork, join, etc..)
@@ -21,12 +19,7 @@ Plans
 * Documentation
 
 
-License
--------
+## License
 
 This library was written by Benoit Myard for Almacom (Thailand) Ltd. It is
 released under the BSD license.
-
-
-.. [1] See https://encrypted.google.com/search?q=sauceboat&tbm=isch
-.. [2] https://bitbucket.org/sunlightlabs/saucebrush
